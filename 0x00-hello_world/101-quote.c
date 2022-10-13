@@ -9,6 +9,6 @@
 int main(void)
 {
 	fprintf(stderr,
-			"with proper grammar, but the outcome is a piece of art,\"- Dora Korpar, 2015-10-19");
+			"and that piece of art is useful,\"- Dora Korpar, 2015-10-19");
 	return (1);
 }
