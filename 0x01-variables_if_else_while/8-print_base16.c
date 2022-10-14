@@ -16,7 +16,7 @@ int main(void)
 
 	while (letters <= 'f')
 	{
-		while (hex <= 10)
+		while (hex < 10)
 		{
 			putchar(hex % 10 + '0');
 			hex++;
