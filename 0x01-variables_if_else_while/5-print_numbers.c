@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * manin - Entry Point
+ * main - Entry Point
  *
- * Description: loop to print out base 10.
+ * Description: loop to print out base ten
  *
  * Return: Always 0 (Success)
  */
