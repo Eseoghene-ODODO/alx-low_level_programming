@@ -18,10 +18,10 @@ int main(void)
 	{
 		while (ca <= 'z')
 		{
-			putchar(ca);
+			putchar('\',ca);
 			ca++;
 		}
-		putchar(cA);
+		putchar('\',cA);
 		cA++;
 	}
 	return (0);
