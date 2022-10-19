@@ -1,6 +1,4 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <main.h>
+#include "main.h"
 
 /*
  *
@@ -16,7 +14,7 @@ void print_alphabet(char letters)
 
 	for (; letters < 'z'; letters++)
 	{
-		putchar(letters);
+		_putchar(letters);
 	}
 }
 int main(void)
@@ -24,7 +22,7 @@ int main(void)
 	char letters = 'a';
 
 	print_alphabet(letters);
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
 
