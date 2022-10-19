@@ -1,9 +1,9 @@
 #include "main.h"
 
-/*
+/**
  * main - Entry Point
  *
- * Description: Outputting _putchar
+ * Description: prints _putchar
  *
  * Return: Always 0
  */
@@ -19,5 +19,6 @@ int main(void)
 	_putchar('a');
 	_putchar('r');
 	_putchar('\n');
+
 	return (0);
 }
