@@ -1,18 +1,14 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
- * Description: printing lowercase letters
- *
- * Return: 0
+ * print_aphabet - function to print lowercase alphabets
  */
 
 void print_alphabet(void)
 {
-	char letters = 'a';
+	int letters;
 
-	for (; letters <= 'z'; letters++)
+	for (letters = 'a'; letters <= 'z'; letters++)
 	{
 		_putchar(letters);
 	}
