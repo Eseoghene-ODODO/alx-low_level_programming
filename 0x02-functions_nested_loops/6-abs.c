@@ -6,22 +6,21 @@
  *
  * @y: character
  *
- * Return: 0
+ * Return: y if y > 0, 0 if y == 0, -y if y < 0
  */
 
 int _abs(int y)
 {
 	if (y > 0)
 	{
-		_putchar(y + '0');
+		return (y);
 	}
 	else if (y == 0)
 	{
-		_putchar(0 + '0');
+		return (0);
 	}
-	else if (y < 0)
+	else
 	{
-		_putchar(y + '0');
+		return (-y);
 	}
-	return (0);
 }
