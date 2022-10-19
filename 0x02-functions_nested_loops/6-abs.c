@@ -17,9 +17,9 @@ int _abs(int y)
 	}
 	else if (y == 0)
 	{
-		_putchar(y + '0');
+		_putchar(0 + '0');
 	}
-	else
+	else if (y < 0)
 	{
 		_putchar(y + '0');
 	}
