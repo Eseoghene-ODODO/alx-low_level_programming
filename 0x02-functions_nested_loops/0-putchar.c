@@ -3,6 +3,8 @@
 /*
  * main - Entry Point
  *
+ * Description: Outputting _putchar
+ *
  * Return: Always 0
  */
 
