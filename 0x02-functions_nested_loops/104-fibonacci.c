@@ -29,8 +29,7 @@ int main(void)
 	second1 = second / 10000000000;
 	first2 = first % 10000000000;
 	second2 = second % 10000000000;
-
-	for (count = 93; count <99; count++)
+	for (count = 93; count < 99; count++)
 	{
 		x1 = first1 + second1;
 		x2 = first2 + second2;
