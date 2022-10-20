@@ -8,20 +8,20 @@
 
 int main(void)
 {
-	long int sum = 0;
-	long int first = 0;
-	long int second = 1;
+	unsigned long int sum = 0;
+	unsigned long int first = 0;
+	unsigned long int second = 1;
 	int count = 0;
 
 	while (count < 97)
 	{
 		sum = first + second;
-		printf("%li, ", sum);
+		printf("%lu, ", sum);
 		first = second;
 		second = sum;
 		count++;
 	}
 	sum = first + second;
-	printf("%li\n", sum);
+	printf("%lu\n", sum);
 	return (0);
 }
