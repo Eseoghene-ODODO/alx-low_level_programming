@@ -18,7 +18,7 @@ int main(void)
 	unsigned long x1, x2;
 	int count = 0;
 
-	for (;count < 92; count++)
+	for (; count < 92; count++)
 	{
 		sum = first + second;
 		printf("%lu, ", sum);
@@ -34,7 +34,7 @@ int main(void)
 	{
 		x1 = first1 + second1;
 		x2 = first2 + second2;
-		
+
 		if (first2 + second2 > 9999999999)
 		{
 			x1 += 1;
