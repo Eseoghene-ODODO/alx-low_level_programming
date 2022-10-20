@@ -40,9 +40,7 @@ int main(void)
 		}
 		printf("%lu%lu", x1, x2);
 		if (count != 98)
-		{
 			printf(", ");
-		}
 		first1 = second1;
 		first2 = second2;
 		second1 = x1;
