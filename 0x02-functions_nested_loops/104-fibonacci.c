@@ -13,7 +13,7 @@ int main(void)
 	long int second = 1;
 	int count = 0;
 
-	while (count <= 98)
+	while (count < 98)
 	{
 		sum = first + second;
 		printf("%li, ", sum);
