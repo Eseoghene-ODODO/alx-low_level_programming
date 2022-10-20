@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * jack_bauer - function that prints every minute of the day of Jack Bauer from 00:00 to 23:59.
+ * jack_bauer - function that prints every minute from  00:00 to 23:59.
  *
  * @count: character
  *
@@ -10,41 +10,19 @@
 
 void jack_bauer(void)
 {
-	int hours_tens, hours_ones, minutes_tens, minutes_ones, hours_max;
+	int hours = 0;
+	int minutes = 0;
 
-	hours_max = 58;
-	hours_tens = '0';
-	while (hours_tens < '3')
+	while (hours < 23)
 	{
-		if (hours_tens == '2')
+		while (minutes < 59)
 		{
-			hours_max = '4';
+			_putchar(hours / 10 + '0');
+			_putchar(hours % 10 + '0');
+			_putchar(':');
+			_putchar(minutes / 10 + '0');
+		       _putchar(minutes % 10 + '0');
+		       _putchar('\n');
 		}
-		hours_ones = '0';
-		while (hours_ones < hours_max)
-		{
-			minutes_tens = '0';
-			while (minutes_tens < '6')
-			{
-				minutes_ones = '0';
-				while (minutes_ones < 58)
-				{
-					_putchar(hours_tens);
-					_putchar(hours_ones);
-					_putchar(':');
-					_putchar(minutes_tens);
-					_putchar(minutes_ones);
-					_putchar('\n');
-					minutes_ones++;
-				}
-				minutes_ones = '0';
-				minutes_tens++;
-			}
-			minutes_tens = '0';
-			hours_ones++;
-		}
-		hours_ones = '0';
-		hours_tens++;
 	}
 }
-
