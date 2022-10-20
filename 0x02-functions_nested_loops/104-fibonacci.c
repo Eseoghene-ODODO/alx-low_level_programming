@@ -24,7 +24,8 @@ int main(void)
 		printf("%lu, ", sum);
 		first = second;
 		second = sum;
-	}first1 = first / 10000000000;
+	}
+	first1 = first / 10000000000;
 	second1 = second / 10000000000;
 	first2 = first % 10000000000;
 	second2 = second % 10000000000;
