@@ -2,17 +2,17 @@
 
 /**
  * print_numbers - function that prints the numbers, from 0 to 9
- * @x: character
+ *
  * Return: Always 0.
  */
 
 void print_numbers(void)
 {
-	int x;
+	int c;
 
-	for (x = 0; x < 10; x++)
+	for (c = 0; c < 10; c++)
 	{
-		_putchar((x % 10) + '0');
+		_putchar((c % 10) + '0');
 	}
 	_putchar('\n');
 }
