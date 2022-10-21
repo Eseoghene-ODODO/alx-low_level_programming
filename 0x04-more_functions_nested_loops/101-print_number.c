@@ -21,7 +21,7 @@ int  power(int base, int exp)
 
 /**
  * print_number - prints an integer
- * @n: number to print
+ * @n: character
  * Return void
  */
 
