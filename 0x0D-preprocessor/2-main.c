@@ -6,7 +6,7 @@
  * Return: 0
  */
 
-int m9ain(void)
+int main(void)
 {
 	printf("%s\n", __FILE__);
 	return (0);
