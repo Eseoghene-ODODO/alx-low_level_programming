@@ -1,52 +1,53 @@
 #include "lists.h"
-
 /**
- * insert_dnodeint_at_index - inserts node at index
- * @h: head of node
- * @idx: index to insert node
- * @n: data for new node
- * Return: list with inserted node
+ * insert_dnodeint_at_index - function that inserts a new node
+ *								at a given position
+ * @h: double pointer to a double linked list
+ * @idx:  index of the list where the new node should be added.
+ *			Index starts at 0
+ * @n: value for the new node
+ * Return: the address of the new node, or NULL if it failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int count = 1;
-	dlistint_t *temp = NULL, *new = NULL;
+	dlistint_t *new;
+	dlistint_t *aux = *h;
+	unsigned int count = 0;
 
-	new = malloc(sizeof(dlistint_t));
-	if (new == NULL || h == NULL)
+	if (h == NULL || (idx != 0 && *h == NULL))
 		return (NULL);
-	new->n = n;
-	temp = *h;
 	if (idx == 0)
 	{
-		*h = new;
-		new->next = temp;
+		new = malloc(sizeof(dlistint_t));
+		if (new == NULL)
+			return (NULL);
+		new->n = n;
 		new->prev = NULL;
-		temp->prev = new;
+		if (*h == NULL)
+			new->next = NULL;
+		else
+		{
+			new->next = *h;
+			(*h)->prev = new;
+		}
+		*h = new;
 		return (new);
 	}
-	while (temp->next != NULL)
+	while (aux->next && count != (idx - 1))
 	{
-		if (count == idx) /* found back */
-		{
-			new->prev = temp; /* current prev to back link */
-			new->next = temp->next; /* current next to front link*/
-			temp->next = new; /* back next link */
-			new->next->prev = new; /* from prev link */
-		}
-		temp = temp->next;
+		aux = aux->next;
 		count++;
 	}
-	if (count == idx) /* end of DLL */
-	{
-		new->prev = temp; /* current prev to back link */
-		new->next = NULL; /* current next to NULL*/
-		temp->next = new; /* back next link */
-	}
-	if (count < idx)
-	{
-		free(new);
+	if (idx - 1 != count)
 		return (NULL);
-	}
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	if (aux->next)
+		aux->next->prev = new;
+	new->prev = aux;
+	new->next = aux->next;
+	aux->next = new;
 	return (new);
 }
