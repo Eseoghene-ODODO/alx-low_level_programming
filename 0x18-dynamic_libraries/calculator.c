@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include "main.h"
 /**
 * add - function to add two integers
 * sub - function to subtract an intger from another
