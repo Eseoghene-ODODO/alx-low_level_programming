@@ -1,22 +1,17 @@
+#include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
 
-int rand()
+/**
+ * srand - Overwrites the srand function in the libc shared object
+ * @seed: The seed to use for the random number generator. [Will be Ignored]
+ */
+void srand(unsigned int seed)
 {
-	static int ct = -1;
+	const char *nums_txt = "9 8 10 24 75 - 9\n";
+	const char *txt = "Congratulations, you win the Jackpot!\n";
 
-	ct++;
-	if (ct == 0)
-		return 8;
-	if (ct == 1)
-		return 8;
-	if (ct == 2)
-		return 7;
-	if (ct == 3)
-		return 9;
-	if (ct == 4)
-		return 23;
-	if (ct == 5)
-		return 74;
-	return ct * ct % 30000;
+	(void)seed;
+	write(STDOUT_FILENO, (void *)nums_txt, 17);
+	write(STDOUT_FILENO, (void *)txt, 38);
+	exit(EXIT_SUCCESS);
 }
