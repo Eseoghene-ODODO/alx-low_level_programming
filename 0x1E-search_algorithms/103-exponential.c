@@ -1,49 +1,64 @@
-#include <stdio.h> /* include the header file for printf */
-#include "search_algos.h" /* include the header file for exponential_search */
+#include <stdio.h>
+#include "search_algos.h"
 
 /**
- * exponential_search - searches for a value in a sorted array of integers
- * using the Exponential search algorithm
- * @array: pointer to the first element of the array to search in
- * @size: number of elements in array
- * @value: value to search for
- * Return: first index where value is located, or
- * -1 if not found or array is NULL
+ * exponential_search - Searches for a value in a sorted array of integers
+ *                      using the Exponential search algorithm.
+ *
+ * @array: Pointer to the first element of the array to search in.
+ * @size: Number of elements in the array.
+ * @value: The value to search for.
+ *
+ * Return: The first index where value is located, or -1 if not found or if
+ *         the array is NULL.
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t bound, low, high, mid;
+    size_t bound = 1;
+    size_t min = 0;
+    size_t max;
+    size_t i, j;
 
-	if (array == NULL || size == 0) /* check for invalid input */
-		return (-1);
+    if (array == NULL)
+        return -1;
 
-	bound = 1; /* initialize the bound to 1 */
+    if (size == 0)
+    {
+        printf("Searching in array: \n");
+        return -1;
+    }
 
-	while (bound < size && array[bound] < value)
-	{
-		printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
-		bound *= 2; /* double the bound */
-	}
+    while (bound < size && array[bound] < value)
+    {
+        printf("Value checked array[%lu] = [%d]\n", bound, array[bound]);
+        min = bound;
+        bound *= 2;
+    }
 
-	low = bound / 2; /* set the lower bound to half of the previous bound */
-	high = (bound < size - 1) ? bound : size - 1;
+    max = (bound < size - 1) ? bound : size - 1;
 
-	printf("Value found between indexes [%lu] and [%lu]\n", low, high);
+    printf("Value found between indexes [%lu] and [%lu]\n", min, max);
 
-	while (low <= high) /* loop until value is found or not */
-	{
-		mid = (low + high) / 2; /* calculate the middle index */
+    for (i = min; i <= max; i++)
+    {
+        printf("Searching in array: ");
 
-		printf("Value checked array[%lu] = [%d]\n", mid, array[mid]);
+        for (j = min; j <= max; j++)
+        {
+            printf("%d", array[j]);
+            if (j < max)
+                printf(", ");
+        }
 
-		if (array[mid] == value) /* check if value is found */
-			return (mid);
+        printf("\n");
 
-		if (array[mid] < value) /* check if value is in the right half */
-			low = mid + 1;
-		else /* check if value is in the left half */
-			high = mid - 1;
-	}
+        if (array[i] == value)
+        {
+            printf("Found %d at index: %lu\n", value, i);
+            return i;
+        }
+    }
 
-	return (-1); /* value not found */
+    printf("Found %d at index: -1\n", value);
+    return -1;
 }
