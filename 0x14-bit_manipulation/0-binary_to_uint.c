@@ -6,20 +6,23 @@
  *
  * Return: The converted number, or 0 if there is an invalid char or if b is NULL.
  */
-unsigned int binary_to_uint(const char *b) {
+unsigned int binary_to_uint(const char *b) 
+{
     unsigned int result = 0;
 
     if (*b == '\0')
+    {
         return 0;
-
+    }
     while (*b) {
         if (*b == '0' || *b == '1') {
             result = result * 2 + (*b - '0');
             b++;
-        } else {
+        }
+	else 
+	{
             return 0;  /* Invalid character in the string */
         }
     }
-
     return result;
 }
