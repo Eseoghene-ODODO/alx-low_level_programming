@@ -69,7 +69,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 	}
 	return (table);
 }
-
+int shash_table_set(shash_table_t *ht, const char *key, const char *value);
 /**
  * shash_table_set - function that adds an element to the sorted hash table
  * @ht: pointer to sorted hash table
@@ -152,7 +152,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	}
 	return (NULL);
 }
-
+void shash_table_print(const shash_table_t *ht);
 /**
  * shash_table_print - function to print the key:value from ht
  * @ht: pointer to hash table
@@ -209,6 +209,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+void shash_table_delete(shash_table_t *ht);
 /**
  * shash_table_delete - free hash table and all nodes
  * @ht: pointer to hash table
